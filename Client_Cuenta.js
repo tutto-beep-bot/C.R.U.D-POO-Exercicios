@@ -23,6 +23,9 @@ class Cliente {
     set nombre(newValue) {this.#nombre = newValue}
     set apellido(newValue) {this.#apellido = newValue}
 
+
+    // METODOS
+    
     asociarCuenta(objetoCuenta){
         this.#cuentas.push(objetoCuenta)
     }
@@ -159,16 +162,13 @@ function crearCuentaCliente(){
 
     let clienteActual = clientes[posicion] //objeto
     let cuentas = clienteActual.cuentas // array
-    console.log(cuentas)
-
 
     let numeroCuenta = cuentas.length + 1 
-    console.log(numeroCuenta)
 
     //instancia
-
     const nuevaCuenta = new Cuenta(numeroCuenta)
     clienteActual.asociarCuenta(nuevaCuenta)
+    
     // cuentas.push(nuevaCuenta)
     resultDiv.innerHTML = `Operacion realizada con exito <br> <pre> ${clienteActual.toString()} </pre>`
 
@@ -204,7 +204,7 @@ function incluirSaldo(){
     resultDiv.innerHTML = 'Operacion realizada con exito'
     resultDiv.innerHTML += `<pre> ${clienteActual.toString()} </pre>`
 }
-
+//                    numero conta   array de objetos
 function buscarCuenta(nCuentaUser, cuentas){
     let i = 0
     let posicion = -1
